@@ -20,6 +20,41 @@ const Navbar = () => {
         prevScrollpos = currentScrollPos;
     }
 
+    const menu = <>
+        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/' style={({ isActive }) => ({
+            color: isActive ? '#d33b33' : '',
+            // textDecoration: isActive ? 'underline' : '',
+            textUnderlineOffset: '3px'
+        })}>HOME</NavLink></li>
+
+        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/about-me' style={({ isActive }) => ({
+            color: isActive ? '#d33b33' : '',
+            // textDecoration: isActive ? 'underline' : '',
+            textUnderlineOffset: '3px'
+        })}>ABOUT ME</NavLink></li>
+
+        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/shop' style={({ isActive }) => ({
+            color: isActive ? '#d33b33' : '',
+            // textDecoration: isActive ? 'underline' : '',
+            textUnderlineOffset: '3px'
+        })}>SHOP</NavLink></li>
+        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/my-projects' style={({ isActive }) => ({
+            color: isActive ? '#d33b33' : '',
+            // textDecoration: isActive ? 'underline' : '',
+            textUnderlineOffset: '3px'
+        })}>PROJECTS</NavLink></li>
+        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/my-contacts' style={({ isActive }) => ({
+            color: isActive ? '#d33b33' : '',
+            // textDecoration: isActive ? 'underline' : '',
+            textUnderlineOffset: '3px'
+        })}>CONTACT</NavLink></li>
+        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/my-blogs' style={({ isActive }) => ({
+            color: isActive ? '#d33b33' : '',
+            // textDecoration: isActive ? 'underline' : '',
+            textUnderlineOffset: '3px'
+        })}>BLOGS</NavLink></li>
+    </>
+
     return (
         <div id='navBar' className={`sticky w-[100%] top-0 z-50 py-2 transition-all duration-[400ms] ease-out ${!theme ? 'bg-[#111A28]' : 'bg-white'}`}>
             <div className="navbar px-0 w-[88%] mx-auto">
@@ -29,14 +64,7 @@ const Navbar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-72">
-                            <li className='transition-all duration-500 hover:text-accent font-semibold mr-6 cursor-pointer'><NavLink to='/'>HOME</NavLink></li>
-
-                            <li className='transition-all duration-500 hover:text-accent font-semibold mr-6 cursor-pointer'><NavLink to='/about-me'>ABOUT ME</NavLink></li>
-
-                            <li className='transition-all duration-500 hover:text-accent font-semibold mr-6 cursor-pointer'><NavLink to='/my-skills'>SKILLS</NavLink></li>
-                            <li className='transition-all duration-500 hover:text-accent font-semibold mr-6 cursor-pointer'><NavLink to='/my-projects'>PROJECTS</NavLink></li>
-                            <li className='transition-all duration-500 hover:text-accent font-semibold mr-6 cursor-pointer'><NavLink to='/my-contacts'>CONTACT</NavLink></li>
-                            <Link to='/view-resume'><button className='btn btn-accent btn-sm w-full'>VIEW RESUME</button></Link>
+                            {menu}
                         </ul>
                     </div>
                     <Link to='/'><img className='w-48 rounded-md h-[81px]' src={logo} alt="" /></Link>
@@ -44,40 +72,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     {/* <ul className="menu-horizontal p-0 flex items-center text-white"> */}
                     <ul className={`menu-horizontal p-0 flex items-center ${!theme ? 'text-white' : ''}`}>
-                        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/' style={({ isActive }) => ({
-                            color: isActive ? '#d33b33' : '',
-                            // textDecoration: isActive ? 'underline' : '',
-                            textUnderlineOffset: '3px'
-                        })}>HOME</NavLink></li>
-
-                        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/about-me' style={({ isActive }) => ({
-                            color: isActive ? '#d33b33' : '',
-                            // textDecoration: isActive ? 'underline' : '',
-                            textUnderlineOffset: '3px'
-                        })}>ABOUT ME</NavLink></li>
-
-                        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/my-skills' style={({ isActive }) => ({
-                            color: isActive ? '#d33b33' : '',
-                            // textDecoration: isActive ? 'underline' : '',
-                            textUnderlineOffset: '3px'
-                        })}>SKILLS</NavLink></li>
-                        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/my-projects' style={({ isActive }) => ({
-                            color: isActive ? '#d33b33' : '',
-                            // textDecoration: isActive ? 'underline' : '',
-                            textUnderlineOffset: '3px'
-                        })}>PROJECTS</NavLink></li>
-                        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/my-contacts' style={({ isActive }) => ({
-                            color: isActive ? '#d33b33' : '',
-                            // textDecoration: isActive ? 'underline' : '',
-                            textUnderlineOffset: '3px'
-                        })}>CONTACT</NavLink></li>
-                        <li className='transition-all duration-[400ms] ease-in hover:scale-[1.2] hover:text-[#d33b33] font-semibold mr-6 cursor-pointer'><NavLink to='/my-blogs' style={({ isActive }) => ({
-                            color: isActive ? '#d33b33' : '',
-                            // textDecoration: isActive ? 'underline' : '',
-                            textUnderlineOffset: '3px'
-                        })}>BLOGS</NavLink></li>
-
-                        
+                        {menu}
                     </ul>
                 </div>
                 <div className="navbar-end">
